@@ -72,24 +72,3 @@ select t.id,t.no,sum(m.price) PriceCount from tables t
  select * from orders where DATEDIFF(minute,[date],GETDATE())<1
  select * from tables t where not exists (select id from Orders o where t.id=o.tableId)
 
- -- Sample Users table
-CREATE TABLE Users (
-    id INT PRIMARY KEY,
-    Firstname NVARCHAR(50),
-    Lastname NVARCHAR(50),
-    Email NVARCHAR(100),
-    -- other columns...
-);
-
--- Insert sample data into Users table
-INSERT INTO Users (id, Firstname, Lastname, Email)
-VALUES 
-(1, 'John', 'Doe', 'john@example.com'),
-(2, 'Alice', 'Smith', 'alice@example.com'),
-(3, 'Bob', 'Johnson', 'bob@example.com');
-
--- Select only Firstname, Lastname, and Email columns, sorted alphabetically by Firstname
-SELECT Firstname, Lastname, Email
-FROM Users
-ORDER BY Firstname;
-SELECT SUBSTRING('DOTNET', 1, 3) AS 'Substring'
